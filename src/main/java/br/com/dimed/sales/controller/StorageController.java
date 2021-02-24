@@ -18,7 +18,7 @@ public class StorageController {
     private StorageService storageService;
 
     @PostMapping("/{productId}")
-    public StorageDto registerProductStorage(@PathVariable final UUID productId, @RequestBody Integer productQuantity) {
+    public StorageDto registerProductStorage(@PathVariable final UUID productId, @RequestParam Integer productQuantity) {
         log.info("Registrando estoque para o produto: [{}], quantidade: [{}]", productId, productQuantity);
         return StorageMapper.map(storageService.registerProductStorage(productId,productQuantity));
     }
