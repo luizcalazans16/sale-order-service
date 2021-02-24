@@ -24,7 +24,7 @@ public class ProductDto {
 
     @NotNull
     private final String name;
-    
+
     private final String description;
 
     @NotNull

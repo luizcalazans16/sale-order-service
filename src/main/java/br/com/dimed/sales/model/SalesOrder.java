@@ -16,6 +16,7 @@ import java.util.UUID;
 public class SalesOrder {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
     @Column(name = "issue_date")

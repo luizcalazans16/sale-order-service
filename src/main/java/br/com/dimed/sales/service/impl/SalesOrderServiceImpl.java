@@ -61,7 +61,7 @@ public class SalesOrderServiceImpl implements SalesOrderService {
             Product storedProduct = productService.findProductById(entry.getKey());
             Storage productStorage = storageService.findStorageByProductId(entry.getKey());
 
-            if (productStorage.getProductQuantity() > entry.getValue()) {
+            if (productStorage.getProductQuantity() >= entry.getValue()) {
                 SalesOrderProduct orderProduct = salesOrderProductService.store(null,
                         new SalesOrderProduct(storedProduct, entry.getValue()));
                 productList.add(orderProduct);

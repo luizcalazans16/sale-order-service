@@ -19,7 +19,7 @@ public class SalesOrderMapper {
                 .issueDate(entity.getIssueDate())
                 .productList(entity.getProductList()
                         .stream()
-                        .map(salesOrderProduct -> SalesOrderProductMapper.map(salesOrderProduct))
+                        .map(SalesOrderProductMapper::map)
                         .collect(Collectors.toList()))
                 .price(entity.getPrice())
                 .orderStatus(entity.getOrderStatus())
@@ -36,7 +36,7 @@ public class SalesOrderMapper {
         entity.setPrice(dto.getPrice());
         entity.setProductList(dto.getProductList()
                 .stream()
-                .map(salesOrderProduct -> SalesOrderProductMapper.map(salesOrderProduct))
+                .map(SalesOrderProductMapper::map)
                 .collect(Collectors.toList()));
         entity.setOrderStatus(dto.getOrderStatus());
 

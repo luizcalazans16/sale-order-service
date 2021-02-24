@@ -20,7 +20,7 @@ public class SalesOrderProductDto {
 
     private ProductDto product;
 
-    private SalesOrderDto salesOrder;
+    private UUID salesOrderId;
 
     private Integer orderedQuantity;
 
