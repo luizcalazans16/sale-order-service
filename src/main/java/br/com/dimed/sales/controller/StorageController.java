@@ -1,6 +1,6 @@
 package br.com.dimed.sales.controller;
 
-import br.com.dimed.sales.constants.StorageUpdateOperationEnum;
+import br.com.dimed.sales.dto.constants.StorageUpdateOperationEnum;
 import br.com.dimed.sales.dto.StorageDto;
 import br.com.dimed.sales.mapper.StorageMapper;
 import br.com.dimed.sales.service.StorageService;

@@ -1,6 +1,6 @@
 package br.com.dimed.sales.service.impl;
 
-import br.com.dimed.sales.constants.StorageUpdateOperationEnum;
+import br.com.dimed.sales.dto.constants.StorageUpdateOperationEnum;
 import br.com.dimed.sales.model.Product;
 import br.com.dimed.sales.model.Storage;
 import br.com.dimed.sales.repository.StorageRepository;

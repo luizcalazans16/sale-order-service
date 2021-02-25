@@ -1,4 +1,4 @@
-package br.com.dimed.sales.constants;
+package br.com.dimed.sales.dto.constants;
 
 public enum StorageUpdateOperationEnum {
 
