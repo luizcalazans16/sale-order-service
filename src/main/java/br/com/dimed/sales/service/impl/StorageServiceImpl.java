@@ -1,5 +1,6 @@
 package br.com.dimed.sales.service.impl;
 
+import br.com.dimed.sales.constants.StorageUpdateOperationEnum;
 import br.com.dimed.sales.model.Product;
 import br.com.dimed.sales.model.Storage;
 import br.com.dimed.sales.repository.StorageRepository;
@@ -25,7 +26,6 @@ public class StorageServiceImpl implements StorageService {
     public Storage findStorageByProductId(final UUID productId) {
         Optional<Storage> storage = storageRepository.findStorageByProductId(productId);
         return storage.orElseThrow();
-
     }
 
     @Override
@@ -44,14 +44,18 @@ public class StorageServiceImpl implements StorageService {
 
 
     @Override
-    public void updateProductStorage(UUID storedProductId, Integer quantity) {
+    public void updateProductStoragePostSale(UUID storedProductId, Integer quantity, StorageUpdateOperationEnum storageUpdateOperationEnum) {
         Storage storage = findStorageByProductId(storedProductId);
-        Integer updatedProductQuantity = storage.getProductQuantity() - quantity;
+        Integer updatedProductQuantity = 0;
+        if(storageUpdateOperationEnum.equals(StorageUpdateOperationEnum.SALE_ORDER)) {
+            updatedProductQuantity = storage.getProductQuantity() - quantity;
+        } else {
+            updatedProductQuantity = storage.getProductQuantity() + quantity;
+        }
+
         storage.setProductQuantity(updatedProductQuantity);
         storage.setLastUpdateAt(LocalDateTime.now());
 
         storageRepository.save(storage);
-
-
     }
 }
