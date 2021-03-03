@@ -1,15 +1,19 @@
 package br.com.dimed.sales.mapper;
 
 import br.com.dimed.sales.dto.SalesOrderDto;
-import br.com.dimed.sales.model.Product;
 import br.com.dimed.sales.model.SalesOrder;
 import lombok.experimental.UtilityClass;
 
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import java.util.stream.Collectors;
 
 @UtilityClass
 public class SalesOrderMapper {
 
+    @Valid
     public static SalesOrderDto map(SalesOrder entity) {
         if (entity == null) {
             return null;
@@ -19,7 +23,8 @@ public class SalesOrderMapper {
                 .issueDate(entity.getIssueDate())
                 .productList(entity.getProductList()
                         .stream()
-                        .map(SalesOrderProductMapper::map)
+                        .map((@NotNull var salesOrderProduct) ->
+                                SalesOrderProductMapper.map(salesOrderProduct))
                         .collect(Collectors.toList()))
                 .price(entity.getPrice())
                 .orderStatus(entity.getOrderStatus())

@@ -11,5 +11,9 @@ public interface StorageService {
 
     Storage registerProductStorage(UUID productId, Integer productQuantity);
 
-    void updateProductStoragePostSale(UUID storedProductId, Integer quantity, StorageUpdateOperationEnum storageUpdateOperationEnum);
+    void updateProductStoragePostSale(UUID storedProductId, Integer quantity,
+                                      StorageUpdateOperationEnum storageUpdateOperationEnum);
+
 }
+
+

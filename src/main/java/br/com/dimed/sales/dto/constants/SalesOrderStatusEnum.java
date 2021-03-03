@@ -6,5 +6,6 @@ public enum SalesOrderStatusEnum {
     PROCESSED,
     SENT,
     DELIVERED,
-    CANCELLED;
+    CANCELLED,
+    ERROR;
 }

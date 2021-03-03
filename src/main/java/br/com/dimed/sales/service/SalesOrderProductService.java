@@ -9,5 +9,6 @@ public interface SalesOrderProductService {
 
     SalesOrderProduct store(final UUID id, final SalesOrderProduct salesOrderProduct);
 
-    void registerSalesOrderId(UUID salesOrderId, List<SalesOrderProduct> salesOrderProductList);
+    void registerSalesOrder(UUID salesOrderId, List<SalesOrderProduct> salesOrderProductList);
+
 }

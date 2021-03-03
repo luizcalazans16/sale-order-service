@@ -29,9 +29,9 @@ public class SalesOrderProductServiceImpl implements SalesOrderProductService {
     }
 
     @Override
-    public void registerSalesOrderId(final UUID salesOrderId, final List<SalesOrderProduct> salesOrderProductList) {
+    public void registerSalesOrder(final UUID salesOrderId, final List<SalesOrderProduct> salesOrderProductList) {
         SalesOrder storedSaleOrder = salesOrderService.findSalesOrderById(salesOrderId);
-        for (SalesOrderProduct salesOrderProduct: salesOrderProductList) {
+        for (SalesOrderProduct salesOrderProduct : salesOrderProductList) {
             salesOrderProduct.setSalesOrder(storedSaleOrder);
             salesOrderProductRepository.save(salesOrderProduct);
         }

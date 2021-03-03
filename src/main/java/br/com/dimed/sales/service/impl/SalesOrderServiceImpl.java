@@ -14,11 +14,14 @@ import br.com.dimed.sales.service.StorageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.*;
 
 @Service
 public class SalesOrderServiceImpl implements SalesOrderService {
+
+    private static final BigDecimal DEFAULT_PRICE = new BigDecimal(0);
 
     @Autowired
     private SalesOrderRepository salesOrderRepository;
@@ -34,7 +37,7 @@ public class SalesOrderServiceImpl implements SalesOrderService {
 
     @Override
     public List<SalesOrder> listSalesOrders() {
-        return salesOrderRepository.findAll();
+        return salesOrderRepository.findAllByOrderByIssueDateAsc();
     }
 
     @Override
@@ -47,15 +50,20 @@ public class SalesOrderServiceImpl implements SalesOrderService {
     public SalesOrder register(HashMap<UUID, Integer> products) {
         SalesOrder salesOrder = new SalesOrder();
         List<SalesOrderProduct> salesOrderProductList = validateProducts(products);
+        try {
+            salesOrder.setProductList(salesOrderProductList);
+            salesOrder.setIssueDate(LocalDate.now());
+            salesOrder.setOrderStatus(SalesOrderStatusEnum.CREATED);
+            salesOrder = salesOrderRepository.save(salesOrder);
 
-        salesOrder.setProductList(salesOrderProductList);
-        salesOrder.setIssueDate(LocalDate.now());
-        salesOrder.setOrderStatus(SalesOrderStatusEnum.CREATED);
-        salesOrder = salesOrderRepository.save(salesOrder);
+            salesOrderProductService.registerSalesOrder(salesOrder.getId(), salesOrderProductList);
 
-       // generateReport(List.copyOf(salesOrder.getProductList()), salesOrder.getIssueDate());
-        salesOrderProductService.registerSalesOrderId(salesOrder.getId(), salesOrderProductList);
+        } catch (Exception e) {
+            salesOrder.setOrderStatus(SalesOrderStatusEnum.ERROR);
+            salesOrder = salesOrderRepository.save(salesOrder);
 
+            return salesOrder;
+        }
         return salesOrder;
     }
 
@@ -75,7 +83,4 @@ public class SalesOrderServiceImpl implements SalesOrderService {
         }
         return productList;
     }
-
-
-
 }

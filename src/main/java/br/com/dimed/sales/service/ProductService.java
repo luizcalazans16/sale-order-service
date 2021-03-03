@@ -13,5 +13,4 @@ public interface ProductService {
     Product register(Product entity);
 
     List<Product> listProducts();
-
 }

@@ -1,6 +1,5 @@
 package br.com.dimed.sales.mapper;
 
-import br.com.dimed.sales.dto.SalesOrderDto;
 import br.com.dimed.sales.dto.SalesOrderProductDto;
 import br.com.dimed.sales.model.SalesOrderProduct;
 import lombok.experimental.UtilityClass;
