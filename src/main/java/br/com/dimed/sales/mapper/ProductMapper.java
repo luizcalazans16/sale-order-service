@@ -1,7 +1,7 @@
 package br.com.dimed.sales.mapper;
 
+import br.com.calazans.model.Product;
 import br.com.dimed.sales.dto.ProductDto;
-import br.com.dimed.sales.model.Product;
 import lombok.experimental.UtilityClass;
 
 @UtilityClass

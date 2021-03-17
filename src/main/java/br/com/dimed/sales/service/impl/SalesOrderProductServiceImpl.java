@@ -1,7 +1,7 @@
 package br.com.dimed.sales.service.impl;
 
-import br.com.dimed.sales.model.SalesOrder;
-import br.com.dimed.sales.model.SalesOrderProduct;
+import br.com.calazans.model.SalesOrder;
+import br.com.calazans.model.SalesOrderProduct;
 import br.com.dimed.sales.repository.SalesOrderProductRepository;
 import br.com.dimed.sales.service.SalesOrderProductService;
 import br.com.dimed.sales.service.SalesOrderService;

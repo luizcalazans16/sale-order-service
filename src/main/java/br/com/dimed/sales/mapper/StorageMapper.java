@@ -1,9 +1,8 @@
 package br.com.dimed.sales.mapper;
 
+import br.com.calazans.model.Product;
+import br.com.calazans.model.Storage;
 import br.com.dimed.sales.dto.StorageDto;
-import br.com.dimed.sales.model.Product;
-import br.com.dimed.sales.model.Storage;
-import jdk.jfr.Unsigned;
 import lombok.experimental.UtilityClass;
 
 @UtilityClass

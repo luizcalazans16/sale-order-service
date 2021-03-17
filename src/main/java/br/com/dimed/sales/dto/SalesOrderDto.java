@@ -1,7 +1,6 @@
 package br.com.dimed.sales.dto;
 
-import br.com.dimed.sales.dto.constants.SalesOrderStatusEnum;
-import br.com.dimed.sales.model.Product;
+import br.com.calazans.constants.SalesOrderStatusEnum;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
 import lombok.Builder;

@@ -1,6 +1,6 @@
 package br.com.dimed.sales.service;
 
-import br.com.dimed.sales.model.SalesOrderProduct;
+import br.com.calazans.model.SalesOrderProduct;
 
 import java.util.List;
 import java.util.UUID;

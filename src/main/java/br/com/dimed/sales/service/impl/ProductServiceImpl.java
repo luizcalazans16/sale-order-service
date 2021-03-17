@@ -1,7 +1,7 @@
 package br.com.dimed.sales.service.impl;
 
+import br.com.calazans.model.Product;
 import br.com.dimed.sales.exceptions.ResourceNotFoundException;
-import br.com.dimed.sales.model.Product;
 import br.com.dimed.sales.repository.ProductRepository;
 import br.com.dimed.sales.service.ProductService;
 import lombok.extern.slf4j.Slf4j;

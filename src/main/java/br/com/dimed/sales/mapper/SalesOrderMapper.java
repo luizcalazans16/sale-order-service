@@ -1,11 +1,9 @@
 package br.com.dimed.sales.mapper;
 
+import br.com.calazans.model.SalesOrder;
 import br.com.dimed.sales.dto.SalesOrderDto;
-import br.com.dimed.sales.model.SalesOrder;
 import lombok.experimental.UtilityClass;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import java.util.stream.Collectors;

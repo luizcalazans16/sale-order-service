@@ -1,8 +1,8 @@
 package br.com.dimed.sales.service.impl;
 
+import br.com.calazans.model.Product;
+import br.com.calazans.model.Storage;
 import br.com.dimed.sales.dto.constants.StorageUpdateOperationEnum;
-import br.com.dimed.sales.model.Product;
-import br.com.dimed.sales.model.Storage;
 import br.com.dimed.sales.repository.StorageRepository;
 import br.com.dimed.sales.service.ProductService;
 import br.com.dimed.sales.service.StorageService;

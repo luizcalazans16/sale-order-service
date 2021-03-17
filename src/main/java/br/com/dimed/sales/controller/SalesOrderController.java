@@ -1,24 +1,19 @@
 package br.com.dimed.sales.controller;
 
+import br.com.calazans.model.SalesOrder;
 import br.com.dimed.sales.dto.SalesOrderDto;
 import br.com.dimed.sales.dto.SalesOrderProductDto;
 import br.com.dimed.sales.mapper.SalesOrderMapper;
-import br.com.dimed.sales.model.SalesOrder;
-import br.com.dimed.sales.model.SalesOrderProduct;
 import br.com.dimed.sales.service.SalesOrderService;
-import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.Nonnull;
-import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;

@@ -1,6 +1,6 @@
 package br.com.dimed.sales.repository;
 
-import br.com.dimed.sales.model.SalesOrderProduct;
+import br.com.calazans.model.SalesOrderProduct;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

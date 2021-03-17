@@ -1,11 +1,11 @@
 package br.com.dimed.sales.service.impl;
 
+import br.com.calazans.constants.SalesOrderStatusEnum;
+import br.com.calazans.model.Product;
+import br.com.calazans.model.SalesOrder;
+import br.com.calazans.model.SalesOrderProduct;
+import br.com.calazans.model.Storage;
 import br.com.dimed.sales.dto.constants.StorageUpdateOperationEnum;
-import br.com.dimed.sales.dto.constants.SalesOrderStatusEnum;
-import br.com.dimed.sales.model.Product;
-import br.com.dimed.sales.model.SalesOrder;
-import br.com.dimed.sales.model.SalesOrderProduct;
-import br.com.dimed.sales.model.Storage;
 import br.com.dimed.sales.repository.SalesOrderRepository;
 import br.com.dimed.sales.service.ProductService;
 import br.com.dimed.sales.service.SalesOrderProductService;
